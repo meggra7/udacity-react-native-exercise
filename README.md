@@ -27,3 +27,16 @@ This course covers the foundations of building apps with React Native, including
 6. Run `npx expo` to kick off Expo.
 7. To run the app in your web browser, enter `w`. The first time you do this you may see some additional dependency requirements. Copy the provided command needed to install these dependencies, exit Expo, run the command, and restart Expo.
 8. Enter `w` again, and you should see your app open in your web browser.
+
+#### Android
+
+To use the Android emulator, follow the instructions in [Setting up the development environment](https://reactnative.dev/docs/environment-setup?guide=native&platform=android) for `macOS` > `Android`.
+
+#### Xcode
+
+To use the Xcode simulator, follow the instructions in [Setting up the development environment](https://reactnative.dev/docs/environment-setup?guide=native&platform=ios) for `macOS` > `iOS`.
+
+Note that when installing Cocoapods, you may need to specifically install version `1.8.4` per thread [here](https://developer.apple.com/forums/thread/668456).
+```
+sudo gem install -n /usr/local/bin cocoapods -v 1.8.4
+```
