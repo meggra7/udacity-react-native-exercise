@@ -1,5 +1,7 @@
-import Main from "./src/screens/Main";
+import ExerciseOne from "./src/screens/ExerciseOne";
+import ExerciseTwo from "./src/screens/ExerciseTwo";
 
 export default function App() {
-  return <Main />;
+  // return <ExerciseOne />;
+  return <ExerciseTwo />;
 }

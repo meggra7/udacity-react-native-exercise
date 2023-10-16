@@ -1,7 +1,7 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { appStyles } from "../styles/main";
 
-export default function Main() {
+export default function ExerciseOne() {
   const onPress = () => {
     console.log("Button pressed!");
   };
