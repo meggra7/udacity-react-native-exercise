@@ -1,30 +1,34 @@
-import { Text, View } from "react-native";
+import { Pressable, View } from "react-native";
+import { SquareColor, exerciseTwoStyles } from "../styles/exerciseTwo";
+import { useState } from "react";
 
 export default function ExerciseTwo() {
+  const [selectedColor, setSelectedColor] = useState(null);
+  const styles = exerciseTwoStyles(selectedColor);
+
+  const toggleSelectedColor = (color) => {
+    setSelectedColor(color === selectedColor ? null : color);
+  };
+
   return (
     <View style={{ flex: 1, justifyContent: "space-between" }}>
-      <View
-        style={{
-          backgroundColor: "gold",
-          width: 200,
-          height: 200,
-        }}
+      <Pressable
+        style={styles.yellowSquare}
+        onPress={() => toggleSelectedColor(SquareColor.Yellow)}
       />
-      <View
+      <Pressable
         style={{
-          backgroundColor: "steelblue",
-          width: 100,
-          height: 100,
+          ...styles.blueSquare,
           alignSelf: "center",
         }}
+        onPress={() => toggleSelectedColor(SquareColor.Blue)}
       />
-      <View
+      <Pressable
         style={{
-          backgroundColor: "mediumseagreen",
-          width: 150,
-          height: 150,
+          ...styles.greenSquare,
           alignSelf: "flex-end",
         }}
+        onPress={() => toggleSelectedColor(SquareColor.Green)}
       />
     </View>
   );
