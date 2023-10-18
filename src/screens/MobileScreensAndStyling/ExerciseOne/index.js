@@ -1,14 +1,10 @@
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import { Image, Linking, Pressable, ScrollView, Text } from "react-native";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 
 export default function MobileScreensAndStylingExerciseOne() {
-  // Added in lesson "Navigation in React Native"
-  const { navigate } = useNavigation();
-
   const onPress = () => {
-    // Added in lesson "Navigation in React Native"
-    navigate("Overview");
+    Linking.openURL("https://www.udacity.com/course/react-native--cd0444");
   };
 
   const onLongPress = () => {
