@@ -1,9 +1,14 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function MobileScreensAndStylingExerciseOne() {
+  // Added in lesson "Navigation in React Native"
+  const { navigate } = useNavigation();
+
   const onPress = () => {
-    console.log("Button pressed!");
+    // Added in lesson "Navigation in React Native"
+    navigate("Overview");
   };
 
   const onLongPress = () => {
