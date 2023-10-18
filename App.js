@@ -1,9 +1,9 @@
-import ExerciseOne from "./src/screens/ExerciseOne";
-import ExerciseThree from "./src/screens/ExerciseThree";
-import ExerciseTwo from "./src/screens/ExerciseTwo";
+import MobileScreensAndStylingExerciseOne from "./src/screens/MobileScreensAndStyling/ExerciseOne";
+import MobileScreensAndStylingExerciseThree from "./src/screens/MobileScreensAndStyling/ExerciseThree";
+import MobileScreensAndStylingExerciseTwo from "./src/screens/MobileScreensAndStyling/ExerciseTwo";
 
 export default function App() {
-  // return <ExerciseOne />;
-  // return <ExerciseTwo />;
-  return <ExerciseThree />;
+  // return <MobileScreensAndStylingExerciseOne />;
+  // return <MobileScreensAndStylingExerciseTwo />;
+  return <MobileScreensAndStylingExerciseThree />;
 }

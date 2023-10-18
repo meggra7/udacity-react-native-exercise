@@ -1,7 +1,7 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
-import { appStyles } from "../styles/main";
+import { styles } from "./styles";
 
-export default function ExerciseOne() {
+export default function MobileScreensAndStylingExerciseOne() {
   const onPress = () => {
     console.log("Button pressed!");
   };
@@ -11,9 +11,9 @@ export default function ExerciseOne() {
   };
 
   return (
-    <ScrollView contentContainerStyle={appStyles.scrollViewContainer}>
+    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <Image
-        source={require("../../assets/img/brooklyn_bridge.png")}
+        source={require("../../../../assets/img/brooklyn_bridge.png")}
         style={{
           marginBottom: 20,
           height: 200,
