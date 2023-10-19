@@ -1,11 +1,11 @@
 import "react-native-gesture-handler";
-import TabNavigation from "./src/navigation/tab";
 import { NavigationContainer } from "@react-navigation/native";
+import EntryNavigation from "./src/navigation/entry";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavigation />
+      <EntryNavigation />
     </NavigationContainer>
   );
 }
