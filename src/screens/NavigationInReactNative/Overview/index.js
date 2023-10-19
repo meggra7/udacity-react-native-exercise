@@ -9,19 +9,21 @@ export default function Overview() {
       <Text style={styles.lessonHeader}>Mobile Screens and Styling</Text>
       <Pressable
         style={styles.exerciseButton}
-        onPress={() => navigate("Mobile Screens And Styling Exercise One")}
+        onPress={() => navigate("Mobile Screens And Styling Exercise One Push")}
       >
         <Text style={styles.exerciseButtonText}>Creating Screens</Text>
       </Pressable>
       <Pressable
         style={styles.exerciseButton}
-        onPress={() => navigate("Mobile Screens And Styling Exercise Two")}
+        onPress={() => navigate("Mobile Screens And Styling Exercise Two Push")}
       >
         <Text style={styles.exerciseButtonText}>Styling Mobile Content</Text>
       </Pressable>
       <Pressable
         style={styles.exerciseButton}
-        onPress={() => navigate("Mobile Screens And Styling Exercise Three")}
+        onPress={() =>
+          navigate("Mobile Screens And Styling Exercise Three Push")
+        }
       >
         <Text style={styles.exerciseButtonText}>Putting It All Together</Text>
       </Pressable>

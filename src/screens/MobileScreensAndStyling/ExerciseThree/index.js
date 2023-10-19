@@ -8,8 +8,12 @@ import {
   View,
 } from "react-native";
 import { AppColors, styles } from "./styles";
+import NavigationBar from "../../NavigationInReactNative/PuttingItAllTogether/NavigationBar";
+import { useNavigationState } from "@react-navigation/native";
 
 export default function MobileScreensAndStylingExerciseThree() {
+  const navigationType = useNavigationState((state) => state.type);
+
   const colorPalette = [
     {
       name: "Primary Text",
@@ -76,6 +80,12 @@ export default function MobileScreensAndStylingExerciseThree() {
 
   return (
     <SafeAreaView>
+      {navigationType === "stack" && (
+        <NavigationBar
+          previousScreen="Mobile Screens And Styling Exercise Two Pop"
+          nextScreen="Mobile Screens And Styling Exercise One Push"
+        />
+      )}
       <ScrollView style={{ backgroundColor: "#fff" }}>
         <Text style={styles.title}>This is a title</Text>
         <Text style={styles.header}>This is a header</Text>
