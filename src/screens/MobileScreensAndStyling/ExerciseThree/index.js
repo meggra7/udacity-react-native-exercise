@@ -7,9 +7,13 @@ import {
   Text,
   View,
 } from "react-native";
-import { AppColors, exerciseThreeStyles } from "../styles/exerciseThree";
+import { AppColors, styles } from "./styles";
+import NavigationBar from "../../NavigationInReactNative/PuttingItAllTogether/NavigationBar";
+import { useNavigationState } from "@react-navigation/native";
 
-export default function ExerciseThree() {
+export default function MobileScreensAndStylingExerciseThree() {
+  const navigationType = useNavigationState((state) => state.type);
+
   const colorPalette = [
     {
       name: "Primary Text",
@@ -41,7 +45,7 @@ export default function ExerciseThree() {
   const ColorSwatch = ({ name, hexColor, isDarkShade }, index) => (
     <View
       style={{
-        ...exerciseThreeStyles.colorSwatch,
+        ...styles.colorSwatch,
         backgroundColor: hexColor,
       }}
       key={`color-swatch-${index}`}
@@ -76,13 +80,19 @@ export default function ExerciseThree() {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <Text style={exerciseThreeStyles.title}>This is a title</Text>
-        <Text style={exerciseThreeStyles.header}>This is a header</Text>
-        <Text style={exerciseThreeStyles.body}>This is body text.</Text>
+      {navigationType === "stack" && (
+        <NavigationBar
+          previousScreen="Mobile Screens And Styling Exercise Two Pop"
+          nextScreen="Mobile Screens And Styling Exercise One Push"
+        />
+      )}
+      <ScrollView style={{ backgroundColor: "#fff" }}>
+        <Text style={styles.title}>This is a title</Text>
+        <Text style={styles.header}>This is a header</Text>
+        <Text style={styles.body}>This is body text.</Text>
         <View
           style={{
-            ...exerciseThreeStyles.body,
+            ...styles.body,
             flexDirection: "row",
           }}
         >
@@ -94,14 +104,12 @@ export default function ExerciseThree() {
           <Text style={{ color: AppColors.textPrimary }}>.</Text>
         </View>
         <Image
-          source={require("../../assets/img/autumn.png")}
+          source={require("../../../../assets/img/autumn.png")}
           style={{ height: 200, width: "100%", marginTop: 16 }}
         />
-        <Text style={exerciseThreeStyles.imageCaption}>
-          This is an image caption
-        </Text>
-        <Text style={exerciseThreeStyles.header}>Color palette</Text>
-        <Text style={exerciseThreeStyles.body}>
+        <Text style={styles.imageCaption}>This is an image caption</Text>
+        <Text style={styles.header}>Color palette</Text>
+        <Text style={styles.body}>
           This is the app's autumn-inspired color palette.
         </Text>
         <View
@@ -114,7 +122,7 @@ export default function ExerciseThree() {
         >
           {colorPalette.map((color, index) => ColorSwatch(color, index))}
         </View>
-        <Text style={{ ...exerciseThreeStyles.body, marginBottom: 16 }}>
+        <Text style={{ ...styles.body, marginBottom: 16 }}>
           Here is some long form text to demonstrate the ability to scroll.
           {"\n\n"}Cupcake ipsum dolor sit amet. Lemon drops candy canes chupa
           chups cotton candy cupcake cotton candy. Soufflé pudding lollipop

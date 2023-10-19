@@ -13,7 +13,7 @@ const defaultMargins = {
   marginEnd: 16,
 };
 
-export const exerciseThreeStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
   body: {
     ...defaultMargins,
     marginTop: 8,

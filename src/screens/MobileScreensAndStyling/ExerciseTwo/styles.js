@@ -8,14 +8,15 @@ export const SquareColor = {
 
 const selectedBorderWidth = 8;
 
-export const exerciseTwoStyles = (selectedColor) =>
+export const styles = (selectedColor) =>
   StyleSheet.create({
     yellowSquare: {
       width: 200,
       height: 200,
       backgroundColor: "gold",
       borderColor: "goldenrod",
-      borderWidth: selectedColor === SquareColor.Yellow ? selectedBorderWidth : 0,
+      borderWidth:
+        selectedColor === SquareColor.Yellow ? selectedBorderWidth : 0,
     },
     blueSquare: {
       width: 100,
@@ -29,6 +30,7 @@ export const exerciseTwoStyles = (selectedColor) =>
       height: 150,
       backgroundColor: "mediumseagreen",
       borderColor: "seagreen",
-      borderWidth: selectedColor === SquareColor.Green ? selectedBorderWidth : 0,
+      borderWidth:
+        selectedColor === SquareColor.Green ? selectedBorderWidth : 0,
     },
   });
