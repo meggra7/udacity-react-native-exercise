@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigation from "./tab";
-import Entry from "../screens/DataManagementWithRedux/Entry";
+import Entry from "../screens/Entry";
 import AgileManifesto from "../screens/DataManagementWithRedux/AgileManifesto";
 
 const Stack = createNativeStackNavigator();
