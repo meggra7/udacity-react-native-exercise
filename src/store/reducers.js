@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import story from "../screens/DataManagementWithRedux/AgileManifesto/reducers";
 
 const rootReducer = combineReducers({
-  // TODO add individual feature reducers here
+  story,
 });
 
 export default rootReducer;
