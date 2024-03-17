@@ -1,15 +1,15 @@
-export const useUpdateFields = () => {
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "./reducers";
 
-    const fields = {
-      common_name: '',
-      scientific_name: ''
-    }
-  
-    return {
-      fields,
-      setFormField: (field, value) => { 
-        console.log(`Updating field ${field} to ${value}`)
-        fields[field] = value
-      },
-    }
-  }
+export const useUpdateUserInput = () => {
+  const dispatch = useDispatch();
+  const userInputs = useSelector((state) => state.story.userInputs);
+
+  // This hook returns the existing values, as well as a function to dispatch new values
+  return {
+    userInputs,
+    setUserInput: (field) => (value) => {
+      return dispatch(actions.setUserInput({ field, value }));
+    },
+  };
+};
