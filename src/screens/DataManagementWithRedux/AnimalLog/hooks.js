@@ -25,6 +25,17 @@ export const useNewAnimal = () => {
   }
 }
 
+export const useEditAnimal = () => {
+  const dispatch = useDispatch()
+
+  return {
+      onSubmit: () => {
+        console.log('Dispatching EDIT_ANIMAL action')
+        dispatch(actions.editAnimal())
+      }
+  }
+}
+
 export const useListAnimals = () => {
   return useSelector(state => state.animal.list.animals)
 }
