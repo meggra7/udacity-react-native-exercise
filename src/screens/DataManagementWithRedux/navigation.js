@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AgileManifesto from "./AgileManifesto";
 import DataManagementWithRedux from ".";
+import AnimalLogNavigation from "./AnimalLog/navigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +20,7 @@ export default function DataManagementWithReduxNavigation() {
       <Stack.Screen
         name="Animal Log"
         // TODO Replace with Animal Log component when ready
-        component={AgileManifesto}
+        component={AnimalLogNavigation}
         options={{ title: "Animal Log" }}
       />
     </Stack.Navigator>
