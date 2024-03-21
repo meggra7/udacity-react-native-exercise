@@ -17,6 +17,9 @@ const initialState = {
     create: {
         status: PENDING,
     },
+    edit: {
+        status: PENDING,
+    },
     error: {
         message: ''
     }
@@ -32,10 +35,25 @@ const reducers = {
         state.create.status = SUCCESS
     },
     createAnimalError: (state, { payload }) => {
+        state.error.message = payload
         state.create.status = ERROR
     },
     createAnimalReset: (state) => {
         state.create = initialState.create
+    },
+    editAnimal: (state) => {
+        state.edit.status = REQUESTING
+    },
+    editAnimalResult: (state, { payload }) => {
+        state.list.animals = payload
+        state.edit.status = SUCCESS
+    },
+    editAnimalError: (state, { payload }) => {
+        state.error.message = payload
+        state.edit.status = ERROR
+    },
+    editAnimalReset: (state) => {
+        state.edit = initialState.edit
     },
     setFormField: (state, { payload }) => {
         const current = state.form.fields
@@ -61,7 +79,11 @@ export const {
   createAnimalResult,
   createAnimalError,
   createAnimalReset,
-  setFormField
+  editAnimal,
+  editAnimalResult,
+  editAnimalError,
+  editAnimalReset,
+  setFormField,
 } = slice.actions
 
 export default slice.reducer
