@@ -1,18 +1,14 @@
-import React from 'react'
-import { ScrollView, SafeAreaView } from 'react-native'
-import New from "../../../New"
-
-const fakeSubmit = (form) => {
-  console.log("FAKE SUBMIT!", form.values)
-}
+import React from "react";
+import { ScrollView, SafeAreaView } from "react-native";
+import New from "../../../New";
 
 // top level display component only - declares a view that will be part of navigation
 const NewScreen = () => (
   <SafeAreaView>
     <ScrollView>
-      <New disabled={false} onSubmit={fakeSubmit} />
+      <New />
     </ScrollView>
   </SafeAreaView>
-)
+);
 
-export default NewScreen
+export default NewScreen;
