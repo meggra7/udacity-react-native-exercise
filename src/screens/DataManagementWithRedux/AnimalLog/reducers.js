@@ -41,7 +41,7 @@ const reducers = {
     createAnimalReset: (state) => {
         state.create = initialState.create
     },
-    editAnimal: (state) => {
+    editAnimal: (state, { payload }) => {
         state.edit.status = REQUESTING
     },
     editAnimalResult: (state, { payload }) => {

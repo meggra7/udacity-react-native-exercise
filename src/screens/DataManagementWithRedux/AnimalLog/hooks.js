@@ -25,13 +25,13 @@ export const useNewAnimal = () => {
   }
 }
 
-export const useEditAnimal = () => {
+export const useEditAnimal = (animalId) => {
   const dispatch = useDispatch()
 
   return {
       onSubmit: () => {
         console.log('Dispatching EDIT_ANIMAL action')
-        dispatch(actions.editAnimal())
+        dispatch(actions.editAnimal(animalId))
       }
   }
 }

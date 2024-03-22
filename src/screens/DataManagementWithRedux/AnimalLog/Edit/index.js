@@ -8,11 +8,13 @@ import {
 } from "react-native";
 import { useUpdateFields, useEditAnimal } from "../hooks";
 import formStyles from "./styles";
+import { useRoute } from '@react-navigation/native'
 
-const Form = ({ disabled = false }) => {
+const Form = () => {
   const styles = StyleSheet.create(formStyles());
-  const { fields, setFormField } = useUpdateFields();
-  const { onSubmit } = useEditAnimal();
+  const { params } = useRoute();
+  const { fields, setFormField } = useUpdateFields(params.animalId);
+  const { onSubmit } = useEditAnimal(params.animalId);
 
   const { common_name, scientific_name } = fields;
 

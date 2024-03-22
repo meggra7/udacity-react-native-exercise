@@ -15,22 +15,25 @@ export function* watchEditAnimal() {
 // Whenever these callbacks are called, they will make the actual
 // API request, etc. When the result is received, they can then
 // call another action, such as putting the request result or error.
-export function* takeEditAnimal() {
+export function* takeEditAnimal(action) {
   console.log("Starting fetch request to API");
-  try {
-    // TODO update logic to edit existing instead of add new
-    const fields = yield select((state) => state.animal.form.fields);
-    const animals = yield select((state) => state.animal.list.animals);
+  const animalId = action.payload;
 
-    const animal = {
-      id: animals.length + 1,
-      ...fields,
-    };
+  try {
+        const fields = yield select((state) => state.animal.form.fields);
+    const animals = yield select((state) => state.animal.list.animals);
 
     // pretend call to API
     yield delay(500);
 
-    const result = [animal, ...animals];
+    const result = animals.map(animal => {
+      // if animal is not the one being updated, return it unchanged
+      if (animal.id !== animalId) return animal
+
+      // otherwise, animal is the one being updated
+      // return the new fields from the form instead of the old ones
+      return fields
+    })
 
     yield put(actions.editAnimalResult(result));
   } catch (error) {
